@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Login from "./components/Login";
+import Signup from "./components/Signup";
+import { Route, Routes, Link, Navigate, BrowserRouter } from "react-router-dom";
+import Home from "./components/Home";
+import API_Constants from "./constants/API_Constants";
+import Homepage from "./pages/Homepage";
+import HospitalState from "./context/hospital/HospitalState";
 
 function App() {
+  const { LOCAL } = API_Constants;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HospitalState>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                localStorage.getItem(LOCAL.ISLOGGED) ? (
+                  <Navigate to="/home" />
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/signup"
+              element={
+                localStorage.getItem(LOCAL.ISLOGGED) ? (
+                  <Navigate to="/home" />
+                ) : (
+                  <Signup />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/home"
+              element={
+                localStorage.getItem(LOCAL.ISLOGGED) ? (
+                  <Homepage />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </HospitalState>
+    </>
   );
 }
 
