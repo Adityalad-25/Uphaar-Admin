@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import HospitalContext from '../context/hospital/HospitalContext'
 
 function HospitalTableRow(props) {
 
-    const { item,i } = props
-    const { hname,
+
+    const {deleteHospital} = useContext(HospitalContext)
+     const { item,i } = props
+    const { 
+        _id,hname,
         haddress,
         hcity,
         hstate,
@@ -11,6 +15,13 @@ function HospitalTableRow(props) {
         hlat,
         hlong,
         hphone } = item
+
+
+        const handleDelete = ()=>{
+            if( window.confirm('Are you sure?')===true){
+                deleteHospital(_id)
+            }
+        }
     return (
 
         <tr>
@@ -22,7 +33,7 @@ function HospitalTableRow(props) {
             <td>{hpincode}</td>
             <td>{`${hlat},${hlong}`}</td>
             <td>{hphone}</td>
-            <td></td>
+            <td><button className='btn btn-danger' onClick={handleDelete}>Delete</button></td>
         </tr>
 
     )
