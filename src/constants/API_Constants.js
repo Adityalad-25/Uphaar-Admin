@@ -5,7 +5,7 @@ const API_CONSTANTS = {
   SIGNUP: MAIN_URL + "/api/users/add",
   ALL_HOSPITAL: MAIN_URL + "/api/hospital/all",
   ADD_HOSPITAL: MAIN_URL + "/api/hospital/add",
-  DELETE_HOSP: MAIN_URL + "/api/hospital/",
+  DELETE_HOSP: MAIN_URL + "/api/hospital/",  
 };
 
 const LOCAL = {
