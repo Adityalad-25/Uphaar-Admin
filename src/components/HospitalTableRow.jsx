@@ -31,8 +31,7 @@ const navigate = useNavigate()
             console.log(item)
             console.log(itemC)
             updateHospital(itemC)
-            navigate("#")
-            
+           
         }
 
         const handleDelete = ()=>{
