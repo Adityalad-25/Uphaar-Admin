@@ -5,15 +5,15 @@ import HospitalTableRow from './HospitalTableRow';
 function Hospital() {
 
 
-    const { setHospitals, hospitals, fetchAllHospitals,addHospital } = useContext(HospitalContext)
+    const { setHospitals, hospitals, fetchAllHospitals, addHospital } = useContext(HospitalContext)
 
-    const [hospData,setHosp] = useState({})
+    const [hospData, setHosp] = useState({})
     const handleChange = (e) => {
-        setHosp({...hospData,[e.target.id]:e.target.value})
-        
+        setHosp({ ...hospData, [e.target.id]: e.target.value })
+
     }
 
-    const submitNewHospital = (e)=>{
+    const submitNewHospital = (e) => {
         e.preventDefault();
         addHospital(hospData)
     }
@@ -28,6 +28,7 @@ function Hospital() {
     return (
         <>
 
+            
             <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
                 Add New
             </button>
@@ -52,26 +53,26 @@ function Hospital() {
                                 </div>
                                 <div className="row mt-2">
                                     <div className="col">
-                                        <input type="text" id="hcity" onChange={handleChange} required className="form-control" placeholder="City"/>
+                                        <input type="text" id="hcity" onChange={handleChange} required className="form-control" placeholder="City" />
                                     </div>
                                     <div className="col">
-                                        <input type="text" id="hstate"  onChange={handleChange} required className="form-control" placeholder="State"/>
-                                    </div>
-                                </div>
-                                <div className="row mt-2">
-                                    <div className="col">
-                                        <input type="text" id="hlat" onChange={handleChange} required className="form-control" placeholder="Latitude"/>
-                                    </div>
-                                    <div className="col">
-                                        <input type="text" id="hlong"  onChange={handleChange} required className="form-control" placeholder="Longitude"/>
+                                        <input type="text" id="hstate" onChange={handleChange} required className="form-control" placeholder="State" />
                                     </div>
                                 </div>
                                 <div className="row mt-2">
                                     <div className="col">
-                                        <input type="text" id="hpincode" onChange={handleChange} required className="form-control" placeholder="Pincode"/>
+                                        <input type="text" id="hlat" onChange={handleChange} required className="form-control" placeholder="Latitude" />
                                     </div>
                                     <div className="col">
-                                        <input type="text" id="hphone"  onChange={handleChange} required className="form-control" placeholder="Phone"/>
+                                        <input type="text" id="hlong" onChange={handleChange} required className="form-control" placeholder="Longitude" />
+                                    </div>
+                                </div>
+                                <div className="row mt-2">
+                                    <div className="col">
+                                        <input type="text" id="hpincode" onChange={handleChange} required className="form-control" placeholder="Pincode" />
+                                    </div>
+                                    <div className="col">
+                                        <input type="text" id="hphone" onChange={handleChange} required className="form-control" placeholder="Phone" />
                                     </div>
                                 </div>
                             </div>

@@ -3,9 +3,17 @@ const MAIN_URL = "https://uphaar-backend.vercel.app";
 const API_CONSTANTS = {
   LOGIN: MAIN_URL + "/api/users/login",
   SIGNUP: MAIN_URL + "/api/users/add",
+
   ALL_HOSPITAL: MAIN_URL + "/api/hospital/all",
   ADD_HOSPITAL: MAIN_URL + "/api/hospital/add",
+  UPDATE_HOSPITAL: MAIN_URL + "/api/hospital/add",
   DELETE_HOSP: MAIN_URL + "/api/hospital/",  
+
+  ALL_FIRE: MAIN_URL + "/api/fire/all",
+  ADD_FIRE: MAIN_URL + "/api/fire/add",
+  UPDATE_FIRE: MAIN_URL + "/api/fire/add",
+  DELETE_FIRE: MAIN_URL + "/api/fire/",
+
 };
 
 const LOCAL = {

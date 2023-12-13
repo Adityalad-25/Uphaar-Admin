@@ -44,6 +44,29 @@ const HospitalState = (props) => {
       setHospitals(hospitals.concat(response.data))
     }
   }
+  const updateHospital = async (hdata) => {
+    const reqOptions = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        TOKEN: localStorage.getItem(TOKEN)
+      },
+      body: JSON.stringify(hdata)
+    };
+    // console.log(API_CONSTANTS.LOGIN);
+    let response = await fetch(API_CONSTANTS.UPDATE_HOSPITAL, reqOptions);
+    response = await response.json();
+    if (response.success === 1) {
+      let HospitalCopy =  JSON.parse(JSON.stringify(hospitals))
+      for(let i =0;i<hospitals.length;i++){ 
+        if(HospitalCopy._id === hdata._id){
+          HospitalCopy[i] = hdata
+          break;
+        }
+      }
+      setHospitals(HospitalCopy)
+    }
+  }
 
   const deleteHospital = async (_id) =>{
     const reqOptions = {
@@ -67,7 +90,7 @@ const HospitalState = (props) => {
 
 
   return (
-    <HospitalContext.Provider value={{deleteHospital, setHospitals, hospitals, fetchAllHospitals, addHospital }}>
+    <HospitalContext.Provider value={{deleteHospital,updateHospital, setHospitals, hospitals, fetchAllHospitals, addHospital }}>
       {props.children}
     </HospitalContext.Provider>
   );
