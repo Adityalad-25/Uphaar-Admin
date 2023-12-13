@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import API_Constants from "./constants/API_Constants";
 import Homepage from "./pages/Homepage";
 import HospitalState from "./context/hospital/HospitalState";
+import HospitalPage from "./pages/HospitalPage";
 
 function App() {
   const { LOCAL } = API_Constants;
@@ -43,6 +44,18 @@ function App() {
               element={
                 localStorage.getItem(LOCAL.ISLOGGED) ? (
                   <Homepage />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+
+<Route
+              exact
+              path="/hospital"
+              element={
+                localStorage.getItem(LOCAL.ISLOGGED) ? (
+                  <HospitalPage />
                 ) : (
                   <Navigate to="/" />
                 )
