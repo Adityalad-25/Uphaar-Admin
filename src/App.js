@@ -9,6 +9,7 @@ import Homepage from "./pages/Homepage";
 import HospitalState from "./context/hospital/HospitalState";
 import HospitalPage from "./pages/HospitalPage";
 import FireState from "./context/firestation/FireState";
+import FirePage from "./pages/FirePage";
 
 function App() {
   const { LOCAL } = API_Constants;
@@ -16,7 +17,7 @@ function App() {
     <>
       <FireState>
         <HospitalState>
-          
+
           <BrowserRouter>
             <Routes>
               <Route
@@ -59,6 +60,17 @@ function App() {
                 element={
                   localStorage.getItem(LOCAL.ISLOGGED) ? (
                     <HospitalPage />
+                  ) : (
+                    <Navigate to="/" />
+                  )
+                }
+              />
+              <Route
+                exact
+                path="/firestation"
+                element={
+                  localStorage.getItem(LOCAL.ISLOGGED) ? (
+                    <FirePage />
                   ) : (
                     <Navigate to="/" />
                   )
