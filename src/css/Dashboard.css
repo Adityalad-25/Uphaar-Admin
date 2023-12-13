@@ -21,7 +21,7 @@ body {
   }
   
   .close_icon {
-    color: red;
+    color: rgb(247, 133, 133);
     margin-left: 30px;
     margin-top: 10px;
     cursor: pointer;
@@ -144,19 +144,19 @@ body {
   }
   
   .card:first-child {
-    background-color: #2962ff;
+    background-color: #809dee;
   }
   
   .card:nth-child(2) {
-    background-color: #ff6d00;
+    background-color: #f4b382;
   }
   
   .card:nth-child(3) {
-    background-color: #2e7d32;
+    background-color: #75f47b;
   }
   
   .card:nth-child(4) {
-    background-color: #d50000;
+    background-color: #f38282;
   }
   
   .card-inner {

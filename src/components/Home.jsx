@@ -7,6 +7,8 @@ import
  { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
 
+ import Sidebar from './Sidebar';
+
 function Home() {
 
     const data = [
