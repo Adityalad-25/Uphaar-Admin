@@ -9,7 +9,7 @@ function Home() {
   const { data } = cxt;
 
   return (
-    <div className="container">
+    <div className="containerr">
       <table className="table">
         <thead>
           <tr>
