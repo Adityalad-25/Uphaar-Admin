@@ -96,7 +96,7 @@ function Login() {
     // </>
 
     <>
-     <div className="main-container d-flex align-items-center justify-content-center mt-5 ">
+     <div className="main-container d-flex align-items-center justify-content-center">
       <div className="container">
   <div className="heading">Login</div>
   <form action="" className="form">
@@ -124,7 +124,7 @@ function Login() {
    
     <input className="login-button" type="submit" onClick={loginUser} defaultValue="Sign In" />
   </form>
-  <div className="social-account-container">
+  {/* <div className="social-account-container">
     <span className="title">Or Sign in with</span>
     <div className="social-accounts">
       <button className="social-button google">
@@ -158,9 +158,9 @@ function Login() {
         </svg>
       </button>
     </div>
-  </div>
+  </div> */}
   <span className="agreement">
-    <a href="#">Learn user licence agreement</a>
+    {/* <a href="#">Learn user licence agreement</a> */}
   </span>
 </div>
 </div>
