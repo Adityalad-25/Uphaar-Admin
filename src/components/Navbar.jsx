@@ -12,79 +12,57 @@ function Navbar() {
     window.location.reload();
   };
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid flex">
-        <a class="navbar-brand" href="#">
-          <img
-            style={{ height: "60px", width: "60px" }}
-            src="uphaar-logo.jpeg"
-          ></img>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <div className="nav-itemss d-flex align-items-center justify-content-space-between mb-2">
-              <Link className="nav-item p-3" to="/home">
-                Home
-              </Link>
-              <Link className="nav-item p-3" to="/hospital">
-                Hospital
-              </Link>
-              <Link className="nav-item p-3" to="/firestation">Firestation</Link>
-              <Link className="nav-item p-3" to="/police">
-                PoliceStation
-              </Link>
-            </div>
-            {/* <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li> */}
-          </ul>
-          <form class="d-flex" role="search">
-            <button class="btn btn-success" onClick={logOut}>
-              Log Out
-            </button>
-          </form>
-        </div>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <div className="container-fluid">
+      <Link className="navbar-brand" to="/">
+        <img
+          style={{ height: "60px", width: "60px" }}
+          src="uphaar-logo.jpeg"
+          alt="Logo"
+        />
+      </Link>
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <li className="nav-item p-sm-3">
+            <Link className="nav-link" to="/home">
+              Home
+            </Link>
+          </li>
+          <li className="nav-item p-sm-3">
+            <Link className="nav-link" to="/hospital">
+              Hospitals
+            </Link>
+          </li>
+          <li className="nav-item p-sm-3">
+            <Link className="nav-link" to="/firestation">
+              Fire Stations
+            </Link>
+          </li>
+          <li className="nav-item p-sm-3">
+            <Link className="nav-link" to="/police">
+              Police Stations
+            </Link>
+          </li>
+        </ul>
+        <form className="d-flex">
+          <button className="btn btn-success" onClick={logOut}>
+            Log Out
+          </button>
+        </form>
       </div>
-    </nav>
+    </div>
+  </nav>
   );
 }
 
