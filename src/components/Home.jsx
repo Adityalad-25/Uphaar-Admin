@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/Dashboard.css'
 import 
-{ BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, BsFillBellFill}
+{ BsFillDeviceHddFill, BsFillGrid3X3GapFill, BsHospitalFill, BsFillSafeFill}
  from 'react-icons/bs'
  import 
  { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
@@ -64,7 +64,7 @@ function Home() {
             <div className='card'>
                 <div className='card-inner'>
                     <h3>Devices</h3>
-                    <BsFillArchiveFill className='card_icon'/>
+                    <BsFillDeviceHddFill className='card_icon'/>
                 </div>
                 <h1>300</h1>
             </div>
@@ -78,14 +78,14 @@ function Home() {
             <div className='card'>
                 <div className='card-inner'>
                     <h3>Hospitals</h3>
-                    <BsPeopleFill className='card_icon'/>
+                    <BsHospitalFill className='card_icon'/>
                 </div>
                 <h1>33</h1>
             </div>
             <div className='card'>
                 <div className='card-inner'>
                     <h3>Police Stations</h3>
-                    <BsFillBellFill className='card_icon'/>
+                    <BsFillSafeFill className='card_icon'/>
                 </div>
                 <h1>42</h1>
             </div>
