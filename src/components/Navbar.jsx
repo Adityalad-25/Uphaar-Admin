@@ -2,6 +2,7 @@ import React from "react";
 import API_Constants from "../constants/API_Constants";
 
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -12,9 +13,12 @@ function Navbar() {
   };
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
+      <div class="container-fluid flex">
         <a class="navbar-brand" href="#">
-          <img style={{height:'60px',width:'60px'}} src="uphaar-logo.jpeg"></img>
+          <img
+            style={{ height: "60px", width: "60px" }}
+            src="uphaar-logo.jpeg"
+          ></img>
         </a>
         <button
           class="navbar-toggler"
@@ -29,17 +33,19 @@ function Navbar() {
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">
+            <div className="nav-itemss d-flex align-items-center justify-content-space-between mb-2">
+              <Link className="nav-item p-3" to="/home">
                 Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Link
-              </a>
-            </li>
-            <li class="nav-item dropdown">
+              </Link>
+              <Link className="nav-item p-3" to="/hospital">
+                Hospital
+              </Link>
+              <Link className="nav-item p-3" to="/firestation">Firestation</Link>
+              <Link className="nav-item p-3" to="/police">
+                PoliceStation
+              </Link>
+            </div>
+            {/* <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -47,7 +53,7 @@ function Navbar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                
               </a>
               <ul class="dropdown-menu">
                 <li>
@@ -69,12 +75,7 @@ function Navbar() {
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
+            </li> */}
           </ul>
           <form class="d-flex" role="search">
             <button class="btn btn-success" onClick={logOut}>
