@@ -3,33 +3,71 @@ import HospitalContext from "./HospitalContext";
 import API_Constants from "../../constants/API_Constants";
 
 const HospitalState = (props) => {
-  
-  let hospInit = []
-  const [hospitals,setHospitals] = useState(hospInit)
 
-  const {API_CONSTANTS,LOCAL} = API_Constants
+  let hospInit = []
+  const [hospitals, setHospitals] = useState(hospInit)
+
+  const { API_CONSTANTS, LOCAL } = API_Constants
   const TOKEN = LOCAL.TOKEN
-  const fetchAllHospitals = async ()=>{
+
+
+  const fetchAllHospitals = async () => {
     const reqOptions = {
       method: "GET",
-      headers: { "Content-Type": "application/json",
-                TOKEN : localStorage.getItem(TOKEN) },
-      
+      headers: {
+        "Content-Type": "application/json",
+        TOKEN: localStorage.getItem(TOKEN)
+      },
+
     };
     // console.log(API_CONSTANTS.LOGIN);
     let response = await fetch(API_CONSTANTS.ALL_HOSPITAL, reqOptions);
     response = await response.json();
     hospInit = await response.results
-   setHospitals(hospInit)
+    setHospitals(hospInit)
     // return hospInit
 
   }
+  const addHospital = async (hdata) => {
+    const reqOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        TOKEN: localStorage.getItem(TOKEN)
+      },
+      body: JSON.stringify(hdata)
+    };
+    // console.log(API_CONSTANTS.LOGIN);
+    let response = await fetch(API_CONSTANTS.ADD_HOSPITAL, reqOptions);
+    response = await response.json();
+    if (response.success === 1) {
+      setHospitals(hospitals.concat(response.data))
+    }
+  }
 
-  
+  const deleteHospital = async (_id) =>{
+    const reqOptions = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        TOKEN: localStorage.getItem(TOKEN)
+      },
+      body: JSON.stringify({_id})
+    };
+
+    let response = await fetch(API_CONSTANTS.DELETE_HOSP, reqOptions);
+    response = await response.json();
+    if (response.success === 1) {
+      const newHosp = hospitals.filter((item)=>{
+        return item._id !== _id;
+      })
+      setHospitals(newHosp)
+    }
+  }
 
 
   return (
-    <HospitalContext.Provider value={{ setHospitals,hospitals,fetchAllHospitals }}>
+    <HospitalContext.Provider value={{deleteHospital, setHospitals, hospitals, fetchAllHospitals, addHospital }}>
       {props.children}
     </HospitalContext.Provider>
   );
