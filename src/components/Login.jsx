@@ -15,7 +15,11 @@ function Login() {
     setLoginData({ ...logindata, [e.target.id]: e.target.value });
     console.log(logindata);
   };
+  const signup=()=>{
+    navigator('/signup')
+    window.location.reload();
 
+  }
   const loginUser = async (e) => {
     e.preventDefault();
     const reqOptions = {
@@ -99,6 +103,7 @@ function Login() {
      <div className="main-container d-flex align-items-center justify-content-center">
       <div className="container">
   <div className="heading">Login</div>
+  <h6 style={{color:'black',fontSize:'12px'}}>Don't have an account?<button style={{border:'none',backgroundColor:'transparent'}} onClick={signup}>Create Account</button></h6>
   <form action="" className="form">
     <input
       required=""

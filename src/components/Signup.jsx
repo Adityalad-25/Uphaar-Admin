@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import CONSTANTS from "../constants/API_Constants";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigator = useNavigate();
+
   const { API_CONSTANTS } = CONSTANTS;
   const [logindata, setLoginData] = useState({
     email: "",
@@ -14,7 +17,10 @@ function Login() {
     setLoginData({ ...logindata, [e.target.id]: e.target.value });
     console.log(logindata);
   };
-
+  const logins=()=>{
+    navigator('/');
+    window.location.reload();
+  }
   const signupUser = async (e) => {
     e.preventDefault();
     const reqOptions = {
@@ -98,6 +104,8 @@ function Login() {
      <div className="main-container d-flex align-items-center justify-content-center mt-5 ">
       <div className="container">
   <div className="heading">SignUp</div>
+  <h6 style={{color:'black',fontSize:'12px'}}>Already have an account?<button style={{border:'none',backgroundColor:'transparent'}} onClick={logins}>Login here</button></h6>
+
   <form action="" className="form">
     
     <input
