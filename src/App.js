@@ -8,11 +8,14 @@ import API_Constants from "./constants/API_Constants";
 import Homepage from "./pages/Homepage";
 import HospitalState from "./context/hospital/HospitalState";
 import HospitalPage from "./pages/HospitalPage";
+import PoliceState from "./context/PoliceStation/PoliceState";
+import PolicePage from "./pages/PolicePage";
 
 function App() {
   const { LOCAL } = API_Constants;
   return (
     <>
+    <PoliceState>
       <HospitalState>
         <BrowserRouter>
           <Routes>
@@ -50,7 +53,7 @@ function App() {
               }
             />
 
-<Route
+          <Route
               exact
               path="/hospital"
               element={
@@ -61,9 +64,21 @@ function App() {
                 )
               }
             />
+            <Route
+              exact
+              path="/police"
+              element={
+                localStorage.getItem(LOCAL.ISLOGGED) ? (
+                  <PolicePage />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
           </Routes>
         </BrowserRouter>
       </HospitalState>
+      </PoliceState>
     </>
   );
 }

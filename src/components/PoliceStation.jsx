@@ -1,28 +1,34 @@
 import React, { useContext, useEffect, useState } from "react";
-import HospitalContext from "../context/hospital/HospitalContext";
-import HospitalTableRow from "./HospitalTableRow";
+import PoliceContext from "../context/PoliceStation/PoliceContext";
+import PoliceStationRow from "./PoliceStationRow";
+const PoliceStation = () => {
+  const cxt = useContext(PoliceContext);
 
-function Hospital() {
-  const { setHospitals, hospitals, fetchAllHospitals, addHospital } =
-    useContext(HospitalContext);
-
-  const [hospData, setHosp] = useState({});
+  const { police, fetchAllPolice, addPolice } = cxt;
+  const [policeData, setPolice] = useState({});
   const handleChange = (e) => {
-    setHosp({ ...hospData, [e.target.id]: e.target.value });
+    setPolice({ ...policeData, [e.target.id]: e.target.value });
   };
 
-  const submitNewHospital = (e) => {
+  const submitNewPolice = (e) => {
     e.preventDefault();
-    addHospital(hospData);
+    addPolice(policeData);
   };
-  const addTeamMember = () => {};
   useEffect(() => {
-    fetchAllHospitals();
-    // console.log(hosps)
-    // console.log(hospitals)
+    const fetchData = async () => {
+      try {
+        const data = await fetchAllPolice();
+        console.log("Data fetched successfully", data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
   }, []);
   return (
     <>
+    <div className="container-fluid">
       <button
         type="button"
         className="btn btn-primary"
@@ -30,17 +36,10 @@ function Hospital() {
         data-bs-target="#addModal">
         Add New
       </button>
-      <input
-        type="text"
-        className="filters mb-3"
-        placeholder="Filter by City..."
-      />
-      <input
-        type="text"
-        className="filters mb-3 "
-        placeholder="Filter by State..."
-      />
+      <input type="text" className="filters mb-3" placeholder="Filter by City..."/>
+      <input type="text" className="filters mb-3 " placeholder="Filter by State..."/>
 
+    </div>
       <div
         className="modal fade"
         id="addModal"
@@ -59,10 +58,10 @@ function Hospital() {
                 data-bs-dismiss="modal"
                 aria-label="Close"></button>
             </div>
-            <form onSubmit={submitNewHospital}>
+            <form onSubmit={submitNewPolice}>
               <div className="modal-body">
                 <div className="mb-3" style={{ textAlign: "left" }}>
-                  <label htmlFor="hname" className="form-label">
+                  <label htmlFor="pname" className="form-label">
                     Name
                   </label>
                   <input
@@ -70,12 +69,12 @@ function Hospital() {
                     onChange={handleChange}
                     required
                     className="form-control"
-                    name="hname"
-                    id="hname"
+                    name="pname"
+                    id="pname"
                   />
                 </div>
                 <div className="mb-3" style={{ textAlign: "left" }}>
-                  <label htmlFor="haddress" className="form-label">
+                  <label htmlFor="paddress" className="form-label">
                     Address
                   </label>
                   <input
@@ -83,15 +82,15 @@ function Hospital() {
                     onChange={handleChange}
                     required
                     className="form-control"
-                    id="haddress"
-                    name="haddress"
+                    id="paddress"
+                    name="paddress"
                   />
                 </div>
                 <div className="row mt-2">
                   <div className="col">
                     <input
                       type="text"
-                      id="hcity"
+                      id="pcity"
                       onChange={handleChange}
                       required
                       className="form-control"
@@ -101,7 +100,7 @@ function Hospital() {
                   <div className="col">
                     <input
                       type="text"
-                      id="hstate"
+                      id="pstate"
                       onChange={handleChange}
                       required
                       className="form-control"
@@ -113,7 +112,7 @@ function Hospital() {
                   <div className="col">
                     <input
                       type="text"
-                      id="hlat"
+                      id="plat"
                       onChange={handleChange}
                       required
                       className="form-control"
@@ -123,7 +122,7 @@ function Hospital() {
                   <div className="col">
                     <input
                       type="text"
-                      id="hlong"
+                      id="plong"
                       onChange={handleChange}
                       required
                       className="form-control"
@@ -135,7 +134,7 @@ function Hospital() {
                   <div className="col">
                     <input
                       type="text"
-                      id="hpincode"
+                      id="ppincode"
                       onChange={handleChange}
                       required
                       className="form-control"
@@ -145,7 +144,7 @@ function Hospital() {
                   <div className="col">
                     <input
                       type="text"
-                      id="hphone"
+                      id="pphone"
                       onChange={handleChange}
                       required
                       className="form-control"
@@ -179,14 +178,16 @@ function Hospital() {
             </tr>
           </thead>
           <tbody className="table-group-divider">
-            {hospitals.map((item, i) => {
-              return <HospitalTableRow key={item._id} item={item} i={i} />;
+            {police.map((item, i) => {
+              // console.log("police data",police)
+
+              return <PoliceStationRow key={item._id} item={item} i={i} />;
             })}
           </tbody>
         </table>
       </div>
     </>
   );
-}
+};
 
-export default Hospital;
+export default PoliceStation;

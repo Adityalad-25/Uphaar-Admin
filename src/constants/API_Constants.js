@@ -7,6 +7,10 @@ const API_CONSTANTS = {
   ADD_HOSPITAL: MAIN_URL + "/api/hospital/add",
   UPDATE_HOSPITAL: MAIN_URL + "/api/hospital/add",
   DELETE_HOSP: MAIN_URL + "/api/hospital/",
+  ALL_POLICE: MAIN_URL + "/api/police/all",
+  ADD_POLICE: MAIN_URL + "/api/police/add",
+  DELETE_POLICE:MAIN_URL+"/api/police/",
+  UPDATE_POLICE: MAIN_URL + "/api/police/add"
 };
 
 const LOCAL = {

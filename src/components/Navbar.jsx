@@ -17,8 +17,7 @@ function Navbar() {
         <a class="navbar-brand" href="#">
           <img
             style={{ height: "60px", width: "60px" }}
-            src="uphaar-logo.jpeg"
-          ></img>
+            src="uphaar-logo.jpeg"></img>
         </a>
         <button
           class="navbar-toggler"
@@ -27,22 +26,17 @@ function Navbar() {
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <div className="nav-itemss d-flex align-items-center justify-content-space-between mb-2">
-              <Link className="nav-item p-3" to="/home">
-                Home
-              </Link>
-              <Link className="nav-item p-3" to="/hospital">
-                Hospital
-              </Link>
-              <Link className="nav-item p-3" to="/firestation">Firestation</Link>
-              <Link className="nav-item p-3" to="/police">
-                PoliceStation
+              <Link
+                className="nav-item p-3"
+                style={{ textDecoration: "none" }}
+                to="/home">
+                <h5 style={{ color: "black" }}>Uphaar-Admin Panel</h5>
               </Link>
             </div>
             {/* <li class="nav-item dropdown">
@@ -78,7 +72,7 @@ function Navbar() {
             </li> */}
           </ul>
           <form class="d-flex" role="search">
-            <button class="btn btn-success" onClick={logOut}>
+            <button class="btn btn-primary" onClick={logOut}>
               Log Out
             </button>
           </form>
