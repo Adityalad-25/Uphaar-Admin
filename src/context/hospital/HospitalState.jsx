@@ -89,6 +89,7 @@ const HospitalState = (props) => {
       })
       setHospitals(newHosp)
     }
+    
   }
 
 

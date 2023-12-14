@@ -1,11 +1,12 @@
 import React, { useContext,useState } from 'react'
 import HospitalContext from '../context/hospital/HospitalContext'
 import {useNavigate} from "react-router-dom"
+import FireContext from '../context/firestation/FireContext'
 
 function FireStationRow(props) {
 const navigate = useNavigate()
 
-    const {item,i} = props
+    const {item,i,openUpdateModal} = props
     const { 
         _id,fname,
         faddress,
@@ -15,6 +16,11 @@ const navigate = useNavigate()
         flat,
         flong,
         fphone } = item
+
+        const {deleteFirestation} = useContext(FireContext)
+        const handleDelete =()=>{
+            deleteFirestation(_id)
+        }
   
     return (
 
@@ -31,7 +37,8 @@ const navigate = useNavigate()
                 
             
                 
-                <button className='btn btn-danger'>Delete</button></td>
+                <button className='btn btn-warning' onClick={()=>{openUpdateModal(item)}}>Update</button>
+                <button className='btn btn-danger' onClick={handleDelete}>Delete</button></td>
         </tr>
 
     )
