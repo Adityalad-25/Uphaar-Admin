@@ -14,6 +14,11 @@ const API_CONSTANTS = {
   UPDATE_FIRE: MAIN_URL + "/api/fire/add",
   DELETE_FIRE: MAIN_URL + "/api/fire/",
 
+  ALL_POLICE: MAIN_URL + "/api/police/all",
+  ADD_POLICE: MAIN_URL + "/api/police/add",
+  UPDATE_POLICE : MAIN_URL + "/api/police/add",
+  DELETE_POLICE : MAIN_URL + "/api/police/delete",
+
 };
 
 const LOCAL = {
