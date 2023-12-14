@@ -22,7 +22,7 @@ const FireState = (props) => {
       },
 
     };
-    // console.log(API_CONSTANTS.LOGIN);
+    // // console.log(API_CONSTANTS.LOGIN);
     let response = await fetch(API_CONSTANTS.ALL_FIRE, reqOptions);
     response = await response.json();
     setFireStations(response.results)

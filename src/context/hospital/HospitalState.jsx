@@ -20,7 +20,7 @@ const HospitalState = (props) => {
       },
 
     };
-    // console.log(API_CONSTANTS.LOGIN);
+    // // console.log(API_CONSTANTS.LOGIN);
     let response = await fetch(API_CONSTANTS.ALL_HOSPITAL, reqOptions);
     response = await response.json();
     hospInit = await response.results
@@ -37,7 +37,7 @@ const HospitalState = (props) => {
       },
       body: JSON.stringify(hdata)
     };
-    // console.log(API_CONSTANTS.LOGIN);
+    // // console.log(API_CONSTANTS.LOGIN);
     let response = await fetch(API_CONSTANTS.ADD_HOSPITAL, reqOptions);
     response = await response.json();
     if (response.success === 1) {
@@ -53,18 +53,21 @@ const HospitalState = (props) => {
       },
       body: JSON.stringify(hdata)
     };
-    // console.log(API_CONSTANTS.LOGIN);
+    // // console.log(API_CONSTANTS.LOGIN);
     let response = await fetch(API_CONSTANTS.UPDATE_HOSPITAL, reqOptions);
     response = await response.json();
+
     if (response.success === 1) {
+
       let HospitalCopy =  JSON.parse(JSON.stringify(hospitals))
-      for(let i =0;i<hospitals.length;i++){ 
-        if(HospitalCopy._id === hdata._id){
-          HospitalCopy[i] = hdata
+      for(let i =0;i<HospitalCopy.length;i++){ 
+        if(HospitalCopy[i]._id === hdata._id){
+          HospitalCopy[i]=  hdata
           break;
         }
       }
       setHospitals(HospitalCopy)
+      console.log("updatedd!")
     }
   }
 

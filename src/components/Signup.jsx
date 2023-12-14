@@ -13,9 +13,9 @@ function Login() {
   });
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
+    // // console.log(e.target.value);
     setLoginData({ ...logindata, [e.target.id]: e.target.value });
-    console.log(logindata);
+    // console.log(logindata);
   };
   const logins=()=>{
     navigator('/');
@@ -28,7 +28,7 @@ function Login() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(logindata),
     };
-    console.log(API_CONSTANTS.LOGIN);
+    // console.log(API_CONSTANTS.LOGIN);
     let response = await fetch(API_CONSTANTS.SIGNUP, reqOptions);
     response = await response.json();
     if (response.success) {
