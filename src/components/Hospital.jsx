@@ -33,7 +33,7 @@ function Hospital() {
     const submitNewHospital = (e) => {
         e.preventDefault();
         addHospital(hospData)
-        refClose.current.click();
+        refAddClose.current.click();
     }
 
     useEffect(() => {
@@ -43,6 +43,7 @@ function Hospital() {
 
     const ref = useRef(null)
     const refClose = useRef(null)
+    const refAddClose = useRef(null)
 
     const updateModalOpen = (record) => {
         ref.current.click()
@@ -64,7 +65,7 @@ function Hospital() {
                     <div className="modal-content">
                         <div className="modal-header">
                             <h5 className="modal-title" id="exampleModalLabel">Add </h5>
-                            <button type="button" ref={refClose} className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <button type="button" ref={refAddClose} className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form onSubmit={submitNewHospital} >
                             <div className="modal-body">

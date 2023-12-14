@@ -6,6 +6,7 @@ import PoliceRow from './PoliceRow'
 function Police() {
 
   const closeAdd = useRef(null)
+  const closeUpdate = useRef(null)
   const openRef = useRef(null)
 
   const { policeStations, fetchAllPoliceStation, addPoliceStation, updatePoliceStation, deletePoliceStation } = useContext(PoliceContext)
@@ -37,7 +38,7 @@ function Police() {
    const submitEditPoliceStation = (e) => {
     e.preventDefault()
     updatePoliceStation(editPolice)
-    closeAdd.current.click()
+    closeUpdate.current.click()
   }
 
   return (
@@ -110,7 +111,7 @@ function Police() {
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="exampleModalLabel">Edit Modal</h5>
-              <button type="button" ref={closeAdd} className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <button type="button" ref={closeUpdate} className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form onSubmit={submitEditPoliceStation} >
               <div className="modal-body">
