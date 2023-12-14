@@ -18,18 +18,18 @@ const navigate = useNavigate()
         hlong,
         hphone } = item
 
-        const [itemC,setItemC] = useState(JSON.parse(JSON.stringify(item)))
+        const [itemC,setItemC] = useState(item)
         
-        console.log(itemC)
+        console.log(i, itemC)
         const handleChange = (e) =>{
             setItemC({...itemC, [e.target.id]:e.target.value})
             console.log(itemC)
         }
 
         const submitUpdateHospital=(e)=>{
-            e.preventDefault();
-            console.log(item)
-            console.log(itemC)
+            // e.preventDefault();
+            // console.log(item)
+            // console.log(itemC)
             updateHospital(itemC)
            
         }
@@ -52,7 +52,7 @@ const navigate = useNavigate()
             <td>{hphone}</td>
             <td>
                 
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
+            <button type="button" className="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#updateModal" >
                 Add New
             </button>
 

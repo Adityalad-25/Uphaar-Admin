@@ -2,6 +2,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import HospitalContext from '../context/hospital/HospitalContext'
 import HospitalTableRow from './HospitalTableRow';
 
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
+
+
 function Hospital() {
 
 
