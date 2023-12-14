@@ -103,7 +103,11 @@ function Login() {
     <>
      <div className="main-container d-flex align-items-center justify-content-center mt-5 ">
       <div className="container">
-  <div className="heading">SignUp</div>
+      <img
+            style={{ height: "60px", width: "60px" }}
+            src="uphaar-logo.jpeg"
+          ></img>
+          <div className="heading mt-2">Sign Up</div>
   <h6 style={{color:'black',fontSize:'12px'}}>Already have an account?<button style={{border:'none',backgroundColor:'transparent'}} onClick={logins}>Login here</button></h6>
 
   <form action="" className="form">
