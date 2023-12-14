@@ -14,11 +14,12 @@ function Navbar() {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid flex">
-        <a class="navbar-brand" href="#">
           <img
             style={{ height: "60px", width: "60px" }}
             src="uphaar-logo.jpeg"
           ></img>
+        <a class="navbar-brand" href="#">
+            Uphaar-Admin-Panel
         </a>
         <button
           class="navbar-toggler"
@@ -34,16 +35,8 @@ function Navbar() {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <div className="nav-itemss d-flex align-items-center justify-content-space-between mb-2">
-              <Link className="nav-item p-3" to="/home">
-                Home
-              </Link>
-              <Link className="nav-item p-3" to="/hospital">
-                Hospital
-              </Link>
-              <Link className="nav-item p-3" to="/firestation">Firestation</Link>
-              <Link className="nav-item p-3" to="/police">
-                PoliceStation
-              </Link>
+              
+             
             </div>
             {/* <li class="nav-item dropdown">
               <a
@@ -77,8 +70,8 @@ function Navbar() {
               </ul>
             </li> */}
           </ul>
-          <form class="d-flex" role="search">
-            <button class="btn btn-success" onClick={logOut}>
+          <form class="d-inline-flex" role="search">
+            <button class="logout" onClick={logOut}>
               Log Out
             </button>
           </form>

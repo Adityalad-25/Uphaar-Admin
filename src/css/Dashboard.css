@@ -118,6 +118,7 @@ body {
   /* Main  */  
   .main-container {
     grid-area: main;
+    margin: 0;
     overflow-y: auto;
     padding: 20px 20px;
     color: rgba(255, 255, 255, 0.95);
@@ -144,27 +145,56 @@ body {
   }
   
   .card:first-child {
-    background-color: #809dee;
+    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    color: white;
+    border: none;
+    transition: all 0.2s ease-in-out;
   }
   
   .card:nth-child(2) {
-    background-color: #f4b382;
-  }
+    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    color: white;
+    border: none;
+    transition: all 0.2s ease-in-out;  }
   
   .card:nth-child(3) {
-    background-color: #75f47b;
-  }
+    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    color: white;
+    border: none;
+    transition: all 0.2s ease-in-out;  }
   
   .card:nth-child(4) {
-    background-color: #f38282;
-  }
+    background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    color: white;
+    border: none;
+    transition: all 0.2s ease-in-out;  }
   
   .card-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+  }
+
+  .manage-text {
+    margin-top: 0;
+    margin-left: 240px;
+    color: rgb(16, 137, 211); 
+    background-color: aliceblue;
+    font-weight: 500;/* Adjust the margin as needed */
+  }
+  .manage-text:hover{
+    color: rgb(16, 137, 211); 
+    background-color: rgb(255, 255, 255);
+  }
   .card-inner > .card_icon {
     font-size: 25px;
   }

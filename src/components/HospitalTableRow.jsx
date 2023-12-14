@@ -53,15 +53,15 @@ const navigate = useNavigate()
             <td>{hphone}</td>
             <td>
                 
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
-                Add New
-            </button>
+                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#updateModal">
+                    Update
+                </button>
 
             <div className="modal fade" id="updateModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 className="modal-title" id="exampleModalLabel">Update Details</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <form onSubmit={submitUpdateHospital} >
@@ -110,7 +110,7 @@ const navigate = useNavigate()
                 </div>
             </div>
                 
-                <button className='btn btn-danger' onClick={handleDelete}>Delete</button></td>
+                <button className='btn btn-danger' style={{ marginLeft: '10px' }} onClick={handleDelete}>Delete</button></td>
         </tr>
 
     )
