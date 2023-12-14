@@ -49,3 +49,15 @@
     transform: rotate(360deg);
   }
 }
+
+.filters{
+  margin-left: 20px;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  
+  align-items: center;
+}
+.filters:focus {
+  outline: none;
+}
