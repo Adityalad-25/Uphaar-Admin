@@ -53,7 +53,7 @@ function Police() {
           <div className='d-flex justify-content-sm-around align-items-center '>
                
                <form className='form-group form-group-lg'>
-                   <input type='text' style={{ width: 1000 }} onChange={(e) => { setSearch(e.target.value) }} className='p-2 form-control m-lg5' aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder='Search Fire Stations' />
+                   <input type='text' style={{ width: 1000 }} onChange={(e) => { setSearch(e.target.value) }} className='p-2 form-control m-lg5' aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder='Search Police Stations' />
                </form>
 
                <button type="button" className="btn btn-primary mt-2 p-2 m-lg-3 mb-3 " data-bs-toggle="modal" data-bs-target="#addModal">

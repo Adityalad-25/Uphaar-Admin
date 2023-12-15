@@ -31,13 +31,13 @@ function PoliceRow(props) {
     <td>{pcity}</td>
     <td>{pstate}</td>
     <td>{ppincode}</td>
-    <td><a href={location} target='_blank'><h3><i class="uil uil-map-pin-alt"></i></h3></a></td>
+    <td><a href={location} target='_blank'><h3><i className="uil uil-map-pin-alt"></i></h3></a></td>
     <td>{pphone}</td>
     <td className='d-flex'>
         
         
-        <button className='btn btn-warning m-1 ' onClick={()=>{openUpdateModal(item)}}><i class="uil uil-edit"></i></button>
-        <button className='btn btn-danger m-1' onClick={handleDelete}><i class="uil uil-trash"></i></button></td>
+        <button className='btn btn-warning m-1 ' onClick={()=>{openUpdateModal(item)}}><i className="uil uil-edit"></i></button>
+        <button className='btn btn-danger m-1' onClick={handleDelete}><i className="uil uil-trash"></i></button></td>
 </tr>
   )
 }
