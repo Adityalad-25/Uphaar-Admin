@@ -104,7 +104,7 @@ function Login() {
      <div className="main-container d-flex align-items-center justify-content-center mt-5 ">
       <div className="container">
       <img
-            style={{ height: "60px", width: "60px" }}
+            style={{ height: "80px", width: "80px" }}
             src="uphaar-logo.jpeg"
           ></img>
           <div className="heading mt-2">Sign Up</div>
