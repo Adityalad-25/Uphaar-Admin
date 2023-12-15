@@ -39,6 +39,9 @@ const navigate = useNavigate()
                 deleteHospital(_id)
             }
         }
+
+        const location = `https://maps.google.com/?q=${hlat},${hlong}`
+        console.log(location)
     return (
 
         <tr>
@@ -48,17 +51,17 @@ const navigate = useNavigate()
             <td>{hcity}</td>
             <td>{hstate}</td>
             <td>{hpincode}</td>
-            <td>{`${hlat},${hlong}`}</td>
+            <td> <a href={location} target='_blank'> <h3><i class="uil uil-map-pin-alt"></i></h3></a> </td>
             <td>{hphone}</td>
-            <td>
+            <td className='d-flex p-3'>
                 
-            <button type="button" className="btn m-lg-3 btn-warning" onClick={()=>{updateModalOpen(item)}}>
-               update
+            <button type="button" className="btn btn-warning fs-9 m-1" onClick={()=>{updateModalOpen(item)}}>
+            <i class="uil uil-edit"></i>
             </button>
 
            
                 
-                <button className='btn btn-danger' onClick={handleDelete}>Delete</button></td>
+                <button className='btn btn-danger fs-9 m-1' onClick={handleDelete}><i class="uil uil-trash"></i></button></td>
         </tr>
 
     )

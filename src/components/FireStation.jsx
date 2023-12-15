@@ -45,13 +45,24 @@ function FireStation() {
   useEffect(() => {
     fetchAllFireStation();
   }, [])
+
+
+  const [search,setSearch] = useState("")
   return (
     <>
            <h1 className='text-center' >Firestations</h1>
 
-      <button type="button" className="btn btn-primary mt-2 p-2 m-lg-3 mb-3  " data-bs-toggle="modal" data-bs-target="#addModal">
-        Add New
-      </button>
+           <div className='d-flex justify-content-sm-around align-items-center '>
+               
+               <form className='form-group form-group-lg'>
+                   <input type='text' style={{ width: 1000 }} onChange={(e) => { setSearch(e.target.value) }} className='p-2 form-control m-lg5' aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder='Search Fire Stations' />
+               </form>
+
+               <button type="button" className="btn btn-primary mt-2 p-2 m-lg-3 mb-3 " data-bs-toggle="modal" data-bs-target="#addModal">
+                   Add New
+               </button>
+           </div>
+
 
       <div className="modal fade" id="addModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
@@ -183,7 +194,10 @@ function FireStation() {
         <tbody className="mt-10px table-group-divider">
           {
 
-            fireStations.map((item, i) => {
+            fireStations.filter((item)=>{
+              return search.toLowerCase() === "" ? item : JSON.stringify(item).toLowerCase().includes(search.toLowerCase())
+                           
+            }).map((item, i) => {
 
               return <FireStationRow key={i} item={item} openUpdateModal={openUpdateModal}  i={i} />
             })

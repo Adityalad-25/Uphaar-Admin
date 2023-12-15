@@ -52,12 +52,24 @@ function Hospital() {
         setEditHospData(record)
     }
 
+
+    const [search, setSearch] = useState("")
+    // console.log(search)
     return (
         <>
 
-           
-<h1 className='text-center' >Hospitals</h1>
 
+            <h1 className='text-center' >Hospitals</h1>
+            <div className='d-flex justify-content-sm-around align-items-center '>
+               
+                <form className='form-group form-group-lg'>
+                    <input type='text' style={{ width: 1000 }} onChange={(e) => { setSearch(e.target.value) }} className='p-2 form-control m-lg5' aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder='Search Hospitals' />
+                </form>
+
+                <button type="button" className="btn btn-primary mt-2 p-2 m-lg-3 mb-3 " data-bs-toggle="modal" data-bs-target="#addModal">
+                    Add New
+                </button>
+            </div>
 
             <div className="modal fade" id="addModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
@@ -112,10 +124,8 @@ function Hospital() {
             </div>
 
 
-              <button type="button" className="btn btn-primary mt-2 p-2 m-lg-3 mb-3 " data-bs-toggle="modal" data-bs-target="#addModal">
-                Add New
-            </button>
-            
+
+
             <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#editModal">
                 update
             </button>
@@ -192,7 +202,9 @@ function Hospital() {
                     <tbody className="table-group-divider">
                         {
 
-                            hospitals.map((item, i) => {
+                            hospitals.filter((item) => {
+                                return search.toLowerCase() === "" ? item : JSON.stringify(item).toLowerCase().includes(search.toLowerCase())
+                            }).map((item, i) => {
 
                                 return <HospitalTableRow key={item._id} item={item} i={i} updateModalOpen={updateModalOpen} />
                             })

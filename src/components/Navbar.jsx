@@ -42,7 +42,7 @@ function Navbar() {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <div className="nav-itemss d-flex align-items-center">
+            <div className="nav-items d-flex align-items-center">
               <NavLink
                 to="/home"
                 className=" nav-item fs-4 fw-bold p-3 text-decoration-none"

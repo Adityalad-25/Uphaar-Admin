@@ -22,6 +22,7 @@ const navigate = useNavigate()
             deleteFirestation(_id)
         }
   
+        const location = `https://maps.google.com/?q=${flat},${flong}`
     return (
 
         <tr>
@@ -31,14 +32,14 @@ const navigate = useNavigate()
             <td>{fcity}</td>
             <td>{fstate}</td>
             <td>{fpincode}</td>
-            <td>{`${flat},${flong}`}</td>
+            <td><a href={location} target='_blank'><h3><i class="uil uil-map-pin-alt"></i></h3></a></td>
             <td>{fphone}</td>
-            <td>
+            <td className='d-flex'>
                 
             
                 
-                <button className='btn btn-warning m-lg-3 ' onClick={()=>{openUpdateModal(item)}}>Update</button>
-                <button className='btn btn-danger' onClick={handleDelete}>Delete</button></td>
+                <button className='btn btn-warning m-1' onClick={()=>{openUpdateModal(item)}}><i class="uil uil-edit"></i></button>
+                <button className='btn btn-danger m-1' onClick={handleDelete}><i class="uil uil-trash"></i></button></td>
         </tr>
 
     )

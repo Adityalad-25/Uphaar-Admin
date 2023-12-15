@@ -34,6 +34,7 @@ function Police() {
     e.preventDefault()
     addPoliceStation(newPolice)
     closeAdd.current.click()
+    document.getElementById("addPoliceForm").reset();
   }
    const submitEditPoliceStation = (e) => {
     e.preventDefault()
@@ -41,15 +42,25 @@ function Police() {
     closeUpdate.current.click()
   }
 
+  const [search,setSearch] = useState("")
+
   return (
     <div>
 
 
           <h1 className='text-center' >PoliceStations</h1>
   
-      <button type="button" className="btn btn-primary mt-2 p-2 m-lg-3 mb-3  " data-bs-toggle="modal" data-bs-target="#addModal">
-        Add New
-      </button>
+          <div className='d-flex justify-content-sm-around align-items-center '>
+               
+               <form className='form-group form-group-lg'>
+                   <input type='text' style={{ width: 1000 }} onChange={(e) => { setSearch(e.target.value) }} className='p-2 form-control m-lg5' aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder='Search Fire Stations' />
+               </form>
+
+               <button type="button" className="btn btn-primary mt-2 p-2 m-lg-3 mb-3 " data-bs-toggle="modal" data-bs-target="#addModal">
+                   Add New
+               </button>
+           </div>
+
 
       <div className="modal fade" id="addModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
@@ -58,7 +69,7 @@ function Police() {
               <h5 className="modal-title" id="exampleModalLabel">Add </h5>
               <button type="button" ref={closeAdd} className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form onSubmit={submitNewPoliceStation} >
+            <form id='addPoliceForm' onSubmit={submitNewPoliceStation} >
               <div className="modal-body">
 
                 <div className="mb-3" style={{ textAlign: 'left' }}>
@@ -130,7 +141,7 @@ function Police() {
                     <input type="text" id="pcity" onChange={editHandleChange} required className="form-control" value={editPolice.pcity} placeholder="City" />
                   </div>
                   <div className="col">
-                    <input type="text" id="pcity" onChange={editHandleChange} required className="form-control" value={editPolice.pcity} placeholder="State" />
+                    <input type="text" id="pstate" onChange={editHandleChange} required className="form-control" value={editPolice.pstate} placeholder="State" />
                   </div>
                 </div>
                 <div className="row mt-2">
@@ -177,7 +188,9 @@ function Police() {
         <tbody className="table-group-divider">
           {
 
-            policeStations.map((item, i) => {
+            policeStations.filter((item)=>{
+              return search.toLowerCase() === "" ? item : JSON.stringify(item).toLowerCase().includes(search.toLowerCase())
+            }).map((item, i) => {
 
               return <PoliceRow key={item._id} item={item} i={i}
               openUpdateModal={openUpdateModal}
