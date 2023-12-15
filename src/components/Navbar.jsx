@@ -12,8 +12,11 @@ function Navbar() {
     window.location.reload();
   };
 
+  const currentRoute =window.location.pathname;
+  
+ 
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary border-3">
+    <nav className="navbar navbar-expand-lg bg-body-white border-3">
       <div className="container-fluid">
         <NavLink className="text-decoration-none " to="/home" >
         <a className="navbar-brand" href="">
@@ -42,7 +45,7 @@ function Navbar() {
             <div className="nav-itemss d-flex align-items-center">
               <NavLink
                 to="/home"
-                className="nav-item fs-4 fw-bold p-3 text-decoration-none"
+                className=" nav-item fs-4 fw-bold p-3 text-decoration-none"
                 activeClassName="text-hover"
               >
                 Home

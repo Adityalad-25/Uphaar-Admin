@@ -12,6 +12,8 @@ import FireState from "./context/firestation/FireState";
 import FirePage from "./pages/FirePage";
 import PoliceState from "./context/police/PoliceState";
 import PolicePage from "./pages/PolicePage";
+import PageNotFound from "./pages/PageNotFound";
+
 
 function App() {
   const { LOCAL } = API_Constants;
@@ -55,7 +57,6 @@ function App() {
                     )
                   }
                 />
-
                 <Route
                   exact
                   path="/hospital"
@@ -77,7 +78,8 @@ function App() {
                       <Navigate to="/" />
                     )
                   }
-                /> <Route
+                />{" "}
+                <Route
                   exact
                   path="/police"
                   element={
@@ -88,6 +90,7 @@ function App() {
                     )
                   }
                 />
+                <Route path="*" element={<PageNotFound/>} />
               </Routes>
             </BrowserRouter>
           </PoliceState>
