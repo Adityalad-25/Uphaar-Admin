@@ -72,7 +72,7 @@ function Home() {
   return (
     <>
       <h1 className="text-center text-dark fw-bold p-3 w-25 m-auto ">
-        Dashboard
+        {/* Dashboard */}
       </h1>
       <main className="main-container bg-white">
         <div className="main-cards">

@@ -12,22 +12,40 @@ function Navbar() {
     window.location.reload();
   };
 
-  const currentRoute =window.location.pathname;
-  
- 
+  const currentRoute = window.location.pathname;
+
+  const shadowCSS = {
+    "box-shadow": "-2px 7px 20px -4px rgba(0,0,0,0.59)",
+    "-webkit-box-shadow": "-2px 7px 20px -4px rgba(0,0,0,0.59)",
+    "-moz-box-shadow": "-2px 7px 20px -4px rgba(0,0,0,0.59)",
+    "border-radius": "0px 0px 20px 20px",
+    "-webkit-border-radius": "0px 0px 18px 19px",
+    "-moz-border-radius": "0px 0px 18px 19px",
+    "margin-bottom": "20px"
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg bg-body-white border-3">
+    <nav
+      className="navbar navbar-expand-lg bg-body-white border-3"
+      style={shadowCSS}
+    >
       <div className="container-fluid">
-        <NavLink className="text-decoration-none " to="/home" >
-        <a className="navbar-brand" href="">
-          <img
-            style={{ height: "60px", width: "60px", borderRadius: "50%", fontWeight: "bold", fontSize: "50px!important" }}
-            src="uphaar-logo.jpeg"
-            className="fs-2"
-            alt="Logo"
-          ></img>
-         <span className="fw-bold fs-4" > Uphaar Admin</span>
-        </a>
+        <NavLink className="text-decoration-none " to="/home">
+          <a className="navbar-brand" href="">
+            <img
+              style={{
+                height: "90px",
+                width: "90px",
+                borderRadius: "50%",
+                fontWeight: "bold",
+                fontSize: "0px!important",
+              }}
+              src="uphaar-logo.jpeg"
+              className="fs-2"
+              alt="Logo"
+            ></img>
+            <span className="fw-bold fs-4"> Uphaar Admin</span>
+          </a>
         </NavLink>
         <button
           className="navbar-toggler"
@@ -45,36 +63,53 @@ function Navbar() {
             <div className="nav-items d-flex align-items-center">
               <NavLink
                 to="/home"
-                className=" nav-item fs-4 fw-bold p-3 text-decoration-none"
+                className=" nav-item fs-5  p-3 text-decoration-none"
                 activeClassName="text-hover"
+                style={{
+                  color: currentRoute === "/home" ? "orange" : "black",
+                  fontWeight: currentRoute === "/home" ? "bold" : "regular",
+                }}
               >
                 Home
               </NavLink>
               <NavLink
                 to="/hospital"
-                className="nav-item fs-4 fw-bold m-3 text-decoration-none"
+                className="nav-item fs-5  m-3 text-decoration-none"
                 activeClassName="text-hover"
+                style={{
+                  color: currentRoute === "/hospital" ? "orange" : "black",
+                  fontWeight: currentRoute === "/hospital" ? "bold" : "regular",
+                }}
               >
                 Hospital
               </NavLink>
               <NavLink
                 to="/firestation"
-                className="nav-item fs-4 fw-bold m-3 text-decoration-none"
+                className="nav-item fs-5  m-3 text-decoration-none"
                 activeClassName="text-hover"
+                style={{
+                  color: currentRoute === "/firestation" ? "orange" : "black",
+                  fontWeight:
+                    currentRoute === "/firestation" ? "bold" : "regular",
+                }}
               >
-                Firestation
+                Fire Station
               </NavLink>
               <NavLink
                 to="/police"
-                className="nav-item fs-4 fw-bold m-3 text-decoration-none"
+                className="nav-item fs-5  m-3 text-decoration-none"
                 activeClassName="text-hover text-decoration-underline"
+                style={{
+                  color: currentRoute === "/police" ? "orange" : "black",
+                  fontWeight: currentRoute === "/police" ? "bold" : "regular",
+                }}
               >
-                PoliceStation
+                Police Station
               </NavLink>
             </div>
           </ul>
           <form className="d-flex" role="search">
-            <button className="btn btn-danger p-2 m-3 fs-5" onClick={logOut}>
+            <button className="btn btn-danger p-2 m-3 fs-6" onClick={logOut}>
               <AiOutlineLogout /> Log out
             </button>
           </form>
