@@ -11,9 +11,9 @@ function Login() {
   });
 
   const handleChange = (e) => {
-    // console.log(e.target.value);
+    // // console.log(e.target.value);
     setLoginData({ ...logindata, [e.target.id]: e.target.value });
-    console.log(logindata);
+    // console.log(logindata);
   };
   const signup=()=>{
     navigator('/signup')
@@ -27,7 +27,7 @@ function Login() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(logindata),
     };
-    // console.log(API_CONSTANTS.LOGIN);
+    // // console.log(API_CONSTANTS.LOGIN);
     let response = await fetch(API_CONSTANTS.LOGIN, reqOptions);
     response = await response.json();
     if (response.success) {
@@ -99,10 +99,14 @@ function Login() {
     // </div>
     // </>
 
-    <>
-     <div className="main-container d-flex align-items-center justify-content-center">
-      <div className="container">
-  <div className="heading">Login</div>
+    <>     
+     <div className="main-container d-flex align-items-center justify-content-center">  
+      <div className="container"> 
+          <img
+            style={{ height: "60px", width: "60px" }}
+            src="uphaar-logo.jpeg"
+          ></img>
+          <div className="heading">Login</div>
   <h6 style={{color:'black',fontSize:'12px'}}>Don't have an account?<button style={{border:'none',backgroundColor:'transparent'}} onClick={signup}>Create Account</button></h6>
   <form action="" className="form">
     <input

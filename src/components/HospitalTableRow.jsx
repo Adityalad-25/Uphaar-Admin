@@ -7,7 +7,7 @@ const navigate = useNavigate()
 
 
     const {deleteHospital,updateHospital} = useContext(HospitalContext)
-     const { item,i } = props
+     const { item,i ,updateModalOpen} = props
     const { 
         _id,hname,
         haddress,
@@ -20,19 +20,18 @@ const navigate = useNavigate()
 
         const [itemC,setItemC] = useState(JSON.parse(JSON.stringify(item)))
         
-        console.log(itemC)
+        // console.log(itemC)
         const handleChange = (e) =>{
             setItemC({...itemC, [e.target.id]:e.target.value})
-            console.log(itemC)
+            // console.log(itemC)
         }
 
         const submitUpdateHospital=(e)=>{
             e.preventDefault();
-            console.log(item)
-            console.log(itemC)
+            // console.log(item)
+            // console.log(itemC)
             updateHospital(itemC)
-            navigate("#")
-            
+           
         }
 
         const handleDelete = ()=>{
@@ -109,6 +108,11 @@ const navigate = useNavigate()
                     </div>
                 </div>
             </div>
+            <button type="button" className="btn btn-warning" onClick={()=>{updateModalOpen(item)}}>
+               update
+            </button>
+
+           
                 
                 <button className='btn btn-danger' style={{ marginLeft: '10px' }} onClick={handleDelete}>Delete</button></td>
         </tr>
