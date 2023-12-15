@@ -1,8 +1,8 @@
 import React from "react";
 import API_Constants from "../constants/API_Constants";
-
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { AiOutlineLogout } from "react-icons/ai";
+import "../css/Dashboard.css";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -11,17 +11,23 @@ function Navbar() {
     navigate("/");
     window.location.reload();
   };
+
   return (
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid flex">
-        <a class="navbar-brand" href="#">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary border-3">
+      <div className="container-fluid">
+        <NavLink className="text-decoration-none " to="/home" >
+        <a className="navbar-brand" href="">
           <img
-            style={{ height: "60px", width: "60px" }}
+            style={{ height: "60px", width: "60px", borderRadius: "50%", fontWeight: "bold", fontSize: "50px!important" }}
             src="uphaar-logo.jpeg"
+            className="fs-2"
+            alt="Logo"
           ></img>
+         <span className="fw-bold fs-4" > Uphaar Admin</span>
         </a>
+        </NavLink>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -29,57 +35,44 @@ function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <div className="nav-itemss d-flex align-items-center justify-content-space-between mb-2">
-              <Link className="nav-item p-3" to="/home">
-                Home
-              </Link>
-              <Link className="nav-item p-3" to="/hospital">
-                Hospital
-              </Link>
-              <Link className="nav-item p-3" to="/firestation">Firestation</Link>
-              <Link className="nav-item p-3" to="/police">
-                PoliceStation
-              </Link>
-            </div>
-            {/* <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <div className="nav-itemss d-flex align-items-center">
+              <NavLink
+                to="/home"
+                className="nav-item fs-4 fw-bold p-3 text-decoration-none"
+                activeClassName="text-hover"
               >
-                
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Action
-                  </a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Another action
-                  </a>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </li>
-              </ul>
-            </li> */}
+                Home
+              </NavLink>
+              <NavLink
+                to="/hospital"
+                className="nav-item fs-4 fw-bold m-3 text-decoration-none"
+                activeClassName="text-hover"
+              >
+                Hospital
+              </NavLink>
+              <NavLink
+                to="/firestation"
+                className="nav-item fs-4 fw-bold m-3 text-decoration-none"
+                activeClassName="text-hover"
+              >
+                Firestation
+              </NavLink>
+              <NavLink
+                to="/police"
+                className="nav-item fs-4 fw-bold m-3 text-decoration-none"
+                activeClassName="text-hover text-decoration-underline"
+              >
+                PoliceStation
+              </NavLink>
+            </div>
           </ul>
-          <form class="d-flex" role="search">
-            <button class="btn btn-success" onClick={logOut}>
-              Log Out
+          <form className="d-flex" role="search">
+            <button className="btn btn-danger p-2 m-3 fs-5" onClick={logOut}>
+              <AiOutlineLogout /> Log out
             </button>
           </form>
         </div>

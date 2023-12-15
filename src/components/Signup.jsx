@@ -108,7 +108,7 @@ function Login() {
             src="uphaar-logo.jpeg"
           ></img>
           <div className="heading mt-2">Sign Up</div>
-  <h6 style={{color:'black',fontSize:'12px'}}>Already have an account?<button style={{border:'none',backgroundColor:'transparent'}} onClick={logins}>Login here</button></h6>
+  <h6 style={{color:'black',fontSize:'12px'}}>Already have an account?<button style={{border:'none',backgroundColor:'transparent'}} onClick={logins}> <span className="text-decoration-underline fs-7" >Login here</span> </button></h6>
 
   <form action="" className="form">
     

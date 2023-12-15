@@ -100,14 +100,14 @@ function Login() {
     // </>
 
     <>     
-     <div className="main-container d-flex align-items-center justify-content-center">  
+     <div className="main-container d-flex align-items-center justify-content-center mt-5 ">  
       <div className="container"> 
           <img
             style={{ height: "60px", width: "60px" }}
             src="uphaar-logo.jpeg"
           ></img>
           <div className="heading">Login</div>
-  <h6 style={{color:'black',fontSize:'12px'}}>Don't have an account?<button style={{border:'none',backgroundColor:'transparent'}} onClick={signup}>Create Account</button></h6>
+  <h6 style={{color:'black',fontSize:'12px'}}>Don't have an account?<button style={{border:'none',backgroundColor:'transparent'}} onClick={signup}><span className="text-decoration-underline" >Create Account</span></button></h6>
   <form action="" className="form">
     <input
       required=""

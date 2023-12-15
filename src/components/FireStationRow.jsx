@@ -37,7 +37,7 @@ const navigate = useNavigate()
                 
             
                 
-                <button className='btn btn-warning' onClick={()=>{openUpdateModal(item)}}>Update</button>
+                <button className='btn btn-warning m-lg-3 ' onClick={()=>{openUpdateModal(item)}}>Update</button>
                 <button className='btn btn-danger' onClick={handleDelete}>Delete</button></td>
         </tr>
 

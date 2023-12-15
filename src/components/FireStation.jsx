@@ -47,8 +47,9 @@ function FireStation() {
   }, [])
   return (
     <>
+           <h1 className='text-center' >Firestations</h1>
 
-      <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
+      <button type="button" className="btn btn-primary mt-2 p-2 m-lg-3 mb-3  " data-bs-toggle="modal" data-bs-target="#addModal">
         Add New
       </button>
 

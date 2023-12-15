@@ -52,7 +52,7 @@ const navigate = useNavigate()
             <td>{hphone}</td>
             <td>
                 
-            <button type="button" className="btn btn-warning" onClick={()=>{updateModalOpen(item)}}>
+            <button type="button" className="btn m-lg-3 btn-warning" onClick={()=>{updateModalOpen(item)}}>
                update
             </button>
 

@@ -55,10 +55,9 @@ function Hospital() {
     return (
         <>
 
+           
+<h1 className='text-center' >Hospitals</h1>
 
-            <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">
-                Add New
-            </button>
 
             <div className="modal fade" id="addModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
@@ -113,7 +112,10 @@ function Hospital() {
             </div>
 
 
-
+              <button type="button" className="btn btn-primary mt-2 p-2 m-lg-3 mb-3 " data-bs-toggle="modal" data-bs-target="#addModal">
+                Add New
+            </button>
+            
             <button type="button" ref={ref} className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#editModal">
                 update
             </button>
