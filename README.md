@@ -10,7 +10,7 @@ Uphaar is a sophisticated MERN (MongoDB, Express.js, React, Node.js) STACK web a
 
 - **Uphaar Admin:**
   - Efficiently manage .
-  - Add , Update and Delete data for Firestations , Hospital and Policstations.
+  - Add , Update and Delete data for Firestations , Hospital and Policestations.
   - Perform a spectrum of Administrative actions.
 
 - **Uphaaar App:** 
