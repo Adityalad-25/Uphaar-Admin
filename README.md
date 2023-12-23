@@ -1,5 +1,5 @@
 
-# Smart India Hackathon - 2023
+# Smart 🇮🇳 Hackathon - 2023
 
 ## Problem Statement : AI-ML Based Intelligent De-smoking/De-hazing Algorithm
 
